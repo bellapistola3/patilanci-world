@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+:root {
+  --background: #090d2a; --foreground: #ffffff; --card: #151a40; --card-foreground: #ffffff;
+  --primary: #ff5b79; --primary-foreground: #ffffff; --secondary: #ffd93d; --secondary-foreground: #20135b;
+  --muted: #222853; --muted-foreground: #c7ccf5; --accent: #44c7f4; --accent-foreground: #08102d;
+  --destructive: #ff4464; --border: #ffffff1f; --input: #ffffff26; --ring: #ffd93d; --radius: 1rem;
+}
+@theme inline {
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 6px); --radius-md: calc(var(--radius) - 3px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 8px);
+  --font-sans: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+button, a { -webkit-tap-highlight-color: transparent; } button { cursor: pointer; }
+:focus-visible { outline: 3px solid #ffd93d; outline-offset: 3px; }
+.text-balance { text-wrap: balance; }
+.tool { display:flex; align-items:center; justify-content:center; gap:.4rem; min-width:46px; min-height:46px; border-radius:14px; background:rgb(255 255 255 / .08); color:white; font-weight:800; font-size:.75rem; transition:.18s ease; }
+.tool:hover,.tool.active { background:#ff5b79; transform:translateY(-1px); }
+.paintable { cursor:pointer; transition:filter .15s ease; }
+.paintable:hover { filter:brightness(.93); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto!important; transition:none!important; } }
